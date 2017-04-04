@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="myColorPrimary">#455A64</color>
+    <color name="myColorPrimaryDark">#455A64</color>
+    <color name="myAccentColor">#Fdb813</color>
+    <color name="myAccentColorDarker">#FF9800</color>
+    <color name="myPrimaryTextColor">#212121</color> <!-- radio group icon -->
+    <color name="mySecondaryTextColor">#212121</color>
+    <color name="backgroundTransparent">#99CFD8DC</color>
+    <color name="backgroundOpaque">#FFCFD8DC</color>
+    <drawable name="button_background_normal">@color/myAccentColor</drawable>
+    <drawable name="button_background_pressed">@color/myAccentColorDarker</drawable>
+</resources>

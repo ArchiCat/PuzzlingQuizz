@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="picture_ids_array">
+        <item>puzzle_zoldmazsola</item>
+        <item>puzzle_engineer</item>
+        <item>puzzle_panda</item>
+        <item>puzzle_upwards</item>
+        <item>puzzle_temple</item>
+    </array>
+</resources>

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Puzzling Quiz</string>
+    <string name="welcome_text">Welcome to</string>
+    <string name="introduction">This is an immediate level english test combined with a little puzzle.
+        \nIf your answer is correct you get a piece to the board.
+        If your answer is wrong, a random piece is taken down.
+        \nhe goal is to finish the puzzle with as few moves as possible.</string>
+    <string name="start_quiz">Start Quiz</string>
+    <string name="next_button">Next Question</string>
+    <string name="show_result">Show Result</string>
+    <string name="check">Check</string>
+    <string name="jump_to_place">Jump To Place</string>
+    <string name="congratulation_text">Congratulations!</string>
+    <string name="finished_puzzle">You have finished the puzzle.</string>
+    <string name="your_score">Your score is</string>
+    <string name="result_one_text">questions: %1$s</string>
+    <string name="result_two_text">good answers: %1$s</string>
+    <string name="play_again">Play Again</string>
+    <string name="wrong_answer">Sorry, not the good answer.</string>
+
+</resources>

@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/myColorPrimaryDark"
+    tools:context="com.example.android.puzzlingquiz.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.example.android.puzzlingquiz.puzzle.Puzzle
+            android:id="@id/the_puzzle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            custom:horizontalPieces="5"
+            custom:puzzleHeight="300"
+            custom:puzzleWidth="300"
+            custom:srcPic="@drawable/puzzle_zoldmazsola"
+            custom:verticalPieces="5" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <Button
+                android:id="@+id/next_question_button"
+                style="@style/ButtonDesign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:onClick="askForNextQuestion"
+                android:text="@string/next_button"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/jump_to_place_button"
+                style="@style/ButtonDesign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:onClick="jumpToPlace"
+                android:text="@string/jump_to_place"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/show_result"
+                style="@style/ButtonDesign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:onClick="showResult"
+                android:text="@string/show_result"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/quiz_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="24dp"
+        android:background="@color/backgroundTransparent"
+        android:visibility="visible">
+
+        <!-- The welcome screen -->
+
+        <LinearLayout
+            android:id="@+id/welcome_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="24dp"
+            android:background="@color/backgroundOpaque"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/puzzling_quiz_long_logo" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="24dp"
+                    android:text="@string/introduction"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <Button
+                style="@style/ButtonDesign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:onClick="startQuiz"
+                android:text="@string/start_quiz" />
+
+        </LinearLayout>
+
+        <!-- Questions with one good answer -->
+
+        <LinearLayout
+            android:id="@+id/question_type_one_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="24dp"
+            android:background="@color/backgroundOpaque"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/question_type_one_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:text="This is the question"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_weight="1">
+
+                <RadioButton
+                    android:id="@+id/radio_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="radio one" />
+
+                <RadioButton
+                    android:id="@+id/radio_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="radio one" />
+
+                <RadioButton
+                    android:id="@+id/radio_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="radio one" />
+
+                <RadioButton
+                    android:id="@+id/radio_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="radio one" />
+
+            </RadioGroup>
+
+            <Button
+                style="@style/ButtonDesign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:onClick="checkAnswer"
+                android:text="@string/check" />
+
+        </LinearLayout>
+
+        <!-- Questions with multiple good answer -->
+
+        <LinearLayout
+            android:id="@+id/question_type_two_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="24dp"
+            android:background="@color/backgroundOpaque"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="24dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/question_type_two_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="This is the Question" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="check 1" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="check 1" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_three"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="check 1" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_four"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="check 1" />
+
+
+            </LinearLayout>
+
+            <Button
+                style="@style/ButtonDesign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:onClick="checkAnswer"
+                android:text="@string/check" />
+
+        </LinearLayout>
+
+        <!-- Questions with space to fill in -->
+
+        <LinearLayout
+            android:id="@+id/question_type_three_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="24dp"
+            android:background="@color/backgroundOpaque"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/question_type_three_holder"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="24dp"
+                android:layout_weight="1">
+
+            </RelativeLayout>
+
+            <Button
+                style="@style/ButtonDesign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="24dp"
+                android:onClick="checkAnswer"
+                android:text="@string/check" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/result_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/welcome_layout"
+            android:layout_centerHorizontal="true"
+            android:background="@color/backgroundOpaque"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/congratulation_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/congratulation_text"
+                    android:textAllCaps="true"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/finished_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/finished_puzzle"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/your_score_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/your_score"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/your_score_percent_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center_horizontal"
+                    android:text="000%"
+                    android:textSize="45sp" />
+
+                <TextView
+                    android:id="@+id/your_score_details_one_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_horizontal"
+                    android:text="questions: 12"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/your_score_details_two_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_horizontal"
+                    android:text="good answers: 12"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <Button
+                style="@style/ButtonDesign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="24dp"
+                android:onClick="startQuiz"
+                android:text="@string/play_again" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
