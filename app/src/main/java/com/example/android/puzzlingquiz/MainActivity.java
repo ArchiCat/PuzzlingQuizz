@@ -157,6 +157,8 @@ public class MainActivity extends AppCompatActivity {
                         flowText.setEditTextStrings(lst);
                     }
                 }
+            } else if (currentlyActiveLayout == RESULT_VIEW) {
+                calculateResult();
             }
         }
     }
