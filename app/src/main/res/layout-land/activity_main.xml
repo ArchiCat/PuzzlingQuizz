@@ -89,7 +89,7 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:paddingTop="8dp"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -131,7 +131,7 @@
             android:layout_margin="24dp"
             android:background="@color/backgroundOpaque"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="visible">
 
 
             <TextView
@@ -141,44 +141,51 @@
                 android:layout_margin="24dp"
                 android:text="This is the question" />
 
-            <RadioGroup
-                android:id="@+id/radio_group"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginRight="24dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-                <RadioButton
-                    android:id="@+id/radio_one"
-                    android:layout_width="0dp"
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="radio one" />
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/radio_two"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="radio one" />
+                    <RadioButton
+                        android:id="@+id/radio_one"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="radio one" />
 
-                <RadioButton
-                    android:id="@+id/radio_three"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="radio one" />
+                    <RadioButton
+                        android:id="@+id/radio_two"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="radio one" />
 
-                <RadioButton
-                    android:id="@+id/radio_four"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="radio one" />
+                    <RadioButton
+                        android:id="@+id/radio_three"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="radio one" />
 
-            </RadioGroup>
+                    <RadioButton
+                        android:id="@+id/radio_four"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="radio one" />
+
+                </RadioGroup>
+            </LinearLayout>
 
             <Button
                 style="@style/ButtonDesign"
