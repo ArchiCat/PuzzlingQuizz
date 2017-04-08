@@ -17,4 +17,7 @@
     <string name="welcome_text">Üdvözlünk</string>
     <string name="wrong_answer">Sajnálom, nem jó válasz.</string>
     <string name="your_score">Az eredményed</string>
+    <string name="exit">Biztos, hogy ki akarsz lépni?</string>
+    <string name="no">Nem</string>
+    <string name="yes">Igen</string>
 </resources>

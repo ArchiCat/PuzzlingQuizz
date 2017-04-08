@@ -17,5 +17,8 @@
     <string name="result_two_text">good answers: %1$s</string>
     <string name="play_again">Play Again</string>
     <string name="wrong_answer">Sorry, not the good answer.</string>
+    <string name="exit">Are you sure you want to exit?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 
 </resources>

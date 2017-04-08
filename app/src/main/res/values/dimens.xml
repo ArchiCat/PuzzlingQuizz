@@ -2,4 +2,38 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="wrapper_margins">24dp</dimen>
+    <dimen name="button_margin">24dp</dimen>
+
+    <!-- logo image at welcome screen - portrait -->
+    <dimen name="logo_image_portrait_height">50dp</dimen>
+    <dimen name="logo_image_portrait_marginLeftRight">12dp</dimen>
+    <dimen name="logo_image_portrait_marginTop">24dp</dimen>
+
+    <!-- logo image at welcome screen - landscape -->
+    <dimen name="logo_image_landscape_height">32dp</dimen>
+    <dimen name="logo_image_landscape_marginTop">8dp</dimen>
+
+    <!-- TextView at welcome screen - portrait -->
+    <dimen name="welcome_text_portrait_margin">24dp</dimen>
+
+    <!-- Welcome screen LinearLayout - landscape -->
+    <dimen name="welcome_linear_layout_paddingTopBottom">8dp</dimen>
+    <dimen name="welcome_linear_layout_paddingLeftRight">8dp</dimen>
+
+    <!-- TextView at welcome screen - landscape -->
+    <dimen name="welcome_text_landscape_marginTop">8dp</dimen>
+
+    <!-- RadioButton marginTops - portrait -->
+    <dimen name="radio_marginTop">16dp</dimen>
+
+    <!-- Checkbox marginTop - portrait -->
+    <dimen name="checkbox_marginTop_portrait_marginTop">24dp</dimen>
+
+    <!-- Checkbox LinearLayout -->
+    <dimen name="checkbox_linear_layout_marginTop">24dp</dimen>
+
+    <!-- Results screen -->
+    <dimen name="results_text_marginTop_large">24dp</dimen>
+    <dimen name="results_text_marginTop_small">24dp</dimen>
 </resources>

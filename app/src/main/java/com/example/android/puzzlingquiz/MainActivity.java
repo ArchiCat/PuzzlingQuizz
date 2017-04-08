@@ -1,5 +1,6 @@
 package com.example.android.puzzlingquiz;
 
+import android.content.DialogInterface;
 import android.content.res.TypedArray;
 import android.graphics.Point;
 import android.graphics.Rect;
@@ -20,6 +21,7 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.app.AlertDialog;
 
 import com.example.android.puzzlingquiz.database.DataBaseHelper;
 import com.example.android.puzzlingquiz.puzzle.Puzzle;
@@ -35,6 +37,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static android.R.attr.orientation;
 import static android.content.res.Configuration.ORIENTATION_PORTRAIT;
 import static android.widget.Toast.makeText;
 import static com.example.android.puzzlingquiz.MainActivity.ActiveLayoutType.JUST_PUZZLE;
@@ -178,10 +181,9 @@ public class MainActivity extends AppCompatActivity {
                 puzzleStatesArray[i] = savedInstanceState.getIntArray("puzzleState" + i);
             }
             puzzle.setPuzzlePieceStates(puzzleStatesArray);
-            puzzle.setSourceId(savedInstanceState.getInt("picForPuzzleID"));
-        } else {
-            puzzle.setSourceId(picForPuzzleID);
+            picForPuzzleID = savedInstanceState.getInt("picForPuzzleID");
         }
+        puzzle.setSourceId(picForPuzzleID);
         puzzle.setBackgroundColor(ContextCompat.getColor(this, R.color.myColorPrimaryDark));
         Point upperLeftPuzzleCorner = new Point();
         Point upperLeftViewCorner = new Point();
@@ -377,19 +379,19 @@ public class MainActivity extends AppCompatActivity {
 
             RadioButton radioOne = (RadioButton) findViewById(R.id.radio_one);
             radioOne.setText(lastQuestion.getAnswerOne());
-            radioOne.setChecked(false);
+            //radioOne.setChecked(false);
 
             RadioButton radioTwo = (RadioButton) findViewById(R.id.radio_two);
             radioTwo.setText(lastQuestion.getAnswerTwo());
-            radioTwo.setChecked(false);
+            //radioTwo.setChecked(false);
 
             RadioButton radioThree = (RadioButton) findViewById(R.id.radio_three);
             radioThree.setText(lastQuestion.getAnswerThree());
-            radioThree.setChecked(false);
+            //radioThree.setChecked(false);
 
             RadioButton radioFour = (RadioButton) findViewById(R.id.radio_four);
             radioFour.setText(lastQuestion.getAnswerFour());
-            radioFour.setChecked(false);
+            //radioFour.setChecked(false);
 
         } else if (lastQuestion.getQuestionType() == 2) {  // choose multiple
 
@@ -542,6 +544,7 @@ public class MainActivity extends AppCompatActivity {
                     result = false;
                     break;
             }
+            radioGroup.clearCheck();
         } else if (lastQuestion.getQuestionType() == 2) {
 
             String[] goodAnswers = lastQuestion.getGoodAnswer().split(",");
@@ -721,6 +724,22 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setMessage(R.string.exit)
+                .setCancelable(false)
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        MainActivity.this.finish();
+                    }
+                })
+                .setNegativeButton(R.string.no, null)
+                .show();
+    }
+
 
     /**
      * get the usable bounds of the display, without the title bar

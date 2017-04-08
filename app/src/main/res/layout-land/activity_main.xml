@@ -85,10 +85,10 @@
             android:layout_margin="24dp"
             android:background="@color/backgroundOpaque"
             android:orientation="vertical"
-            android:paddingBottom="8dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="8dp"
+            android:paddingBottom="@dimen/welcome_linear_layout_paddingTopBottom"
+            android:paddingLeft="@dimen/welcome_linear_layout_paddingLeftRight"
+            android:paddingRight="@dimen/welcome_linear_layout_paddingLeftRight"
+            android:paddingTop="@dimen/welcome_linear_layout_paddingTopBottom"
             android:visibility="gone">
 
             <LinearLayout
@@ -99,16 +99,15 @@
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="32dp"
+                    android:layout_height="@dimen/logo_image_landscape_height"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/logo_image_landscape_marginTop"
                     android:src="@drawable/puzzling_quiz_long_logo" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="0dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/welcome_text_landscape_marginTop"
                     android:text="@string/introduction" />
 
             </LinearLayout>
@@ -128,17 +127,17 @@
             android:id="@+id/question_type_one_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="24dp"
+            android:layout_margin="@dimen/wrapper_margins"
             android:background="@color/backgroundOpaque"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
 
 
             <TextView
                 android:id="@+id/question_type_one_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="24dp"
+                android:layout_margin="@dimen/wrapper_margins"
                 android:text="This is the question" />
 
             <LinearLayout
@@ -151,8 +150,8 @@
                     android:id="@+id/radio_group"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginRight="24dp"
+                    android:layout_marginLeft="@dimen/wrapper_margins"
+                    android:layout_marginRight="@dimen/wrapper_margins"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
@@ -191,7 +190,7 @@
                 style="@style/ButtonDesign"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="24dp"
+                android:layout_margin="@dimen/button_margin"
                 android:onClick="checkAnswer"
                 android:text="@string/check" />
 
@@ -203,7 +202,7 @@
             android:id="@+id/question_type_two_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="24dp"
+            android:layout_margin="@dimen/wrapper_margins"
             android:background="@color/backgroundOpaque"
             android:orientation="vertical"
             android:visibility="gone">
@@ -211,7 +210,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_margin="24dp"
+                android:layout_margin="@dimen/wrapper_margins"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
@@ -224,7 +223,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="@dimen/checkbox_linear_layout_marginTop"
                     android:orientation="horizontal">
 
                     <CheckBox
@@ -267,7 +266,7 @@
                 style="@style/ButtonDesign"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="24dp"
+                android:layout_margin="@dimen/button_margin"
                 android:onClick="checkAnswer"
                 android:text="@string/check" />
 
@@ -298,7 +297,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_margin="24dp"
+                android:layout_margin="@dimen/button_margin"
                 android:onClick="checkAnswer"
                 android:text="@string/check" />
 
@@ -313,7 +312,7 @@
             android:layout_centerHorizontal="true"
             android:background="@color/backgroundOpaque"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -323,7 +322,7 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
                     android:orientation="vertical">
@@ -331,8 +330,9 @@
                     <TextView
                         android:id="@+id/congratulation_text"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="@dimen/wrapper_margins"
                         android:gravity="center_horizontal"
                         android:text="@string/congratulation_text"
                         android:textAllCaps="true"
@@ -341,8 +341,9 @@
                     <TextView
                         android:id="@+id/finished_text"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="24dp"
+                        android:layout_height="0sp"
+                        android:layout_weight="1"
+                        android:layout_margin="@dimen/wrapper_margins"
                         android:gravity="center_horizontal"
                         android:text="@string/finished_puzzle"
                         android:textSize="16sp" />
@@ -359,7 +360,7 @@
                         android:id="@+id/your_score_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="24dp"
+                        android:layout_marginTop="@dimen/results_text_marginTop_large"
                         android:gravity="center_horizontal"
                         android:text="@string/your_score"
                         android:textSize="16sp" />
@@ -368,7 +369,7 @@
                         android:id="@+id/your_score_percent_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="24dp"
+                        android:layout_marginTop="@dimen/results_text_marginTop_large"
                         android:gravity="center_horizontal"
                         android:text="000%"
                         android:textSize="30sp" />
@@ -377,7 +378,7 @@
                         android:id="@+id/your_score_details_one_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="@dimen/results_text_marginTop_small"
                         android:gravity="center_horizontal"
                         android:text="questions: 12"
                         android:textSize="20sp" />
@@ -386,7 +387,7 @@
                         android:id="@+id/your_score_details_two_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="@dimen/results_text_marginTop_small"
                         android:gravity="center_horizontal"
                         android:text="good answers: 12"
                         android:textSize="20sp" />
@@ -399,7 +400,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_margin="24dp"
+                android:layout_margin="@dimen/button_margin"
                 android:onClick="startQuiz"
                 android:text="@string/play_again" />
 
